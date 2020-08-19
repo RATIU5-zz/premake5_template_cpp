@@ -5,8 +5,6 @@ REM This is a swick way of running your premake5.lua script... Run it however yo
 REM What build_project.bat does: Used the default build type or asks for a build type and 
 REM calls the premake5.exe with the build type to build your project
 
-REM TODO: Clean before generating new project
-
 REM ------------------------------USER----------------------------
 
 REM Change this to the root path of your project (default=%~dp0\..\)

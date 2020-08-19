@@ -1,12 +1,10 @@
 @echo off
 
-REM Renaming your project with a batch script is cooler and
-REM faster than manually changing your name everywhere ;)
+REM Renaming your project with a batch script is cooler
+REM than manually changing your name everywhere ;)
 
 REM What rename.bat does: Grabs the name of the premake5.lua workspace, and replaces all
 REM occurences of that name with a new name in that file and renames the project folder too
-
-REM TODO: Clean before renaming
 
 REM ------------------------------USER----------------------------
 
