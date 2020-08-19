@@ -1,9 +1,9 @@
 workspace "MyProject"
-    architecture "x86_64"
+	architecture "x86_64"
 	startproject "MyProject"
-    configurations { "Debug", "Release" }
+	configurations { "Debug", "Release" }
 
-    outputdir "%{cfg.config}-%{cfg.platform}-%{cfg.architecture}"
+    	outputdir "%{cfg.config}-%{cfg.platform}-%{cfg.architecture}"
 
 project "MyProject"
     location "MyProject"
