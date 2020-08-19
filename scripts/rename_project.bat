@@ -1,5 +1,4 @@
 @echo off
-REM Copyright in README.md
 
 REM Renaming your project with a batch script is cooler and
 REM faster than manually changing your name everywhere ;)

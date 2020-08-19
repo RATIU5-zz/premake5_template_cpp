@@ -1,5 +1,4 @@
 @echo off
-REM Copyright in README.md
 
 REM This is a swick way of running your premake5.lua script... Run it however you perfer :D
 
