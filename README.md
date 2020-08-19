@@ -2,4 +2,4 @@
 This is my custom Premake5 template for all of my C++ projects
 
 
-## -- This is currently not ready --
+## -- This is currently not production ready --
