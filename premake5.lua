@@ -3,7 +3,7 @@ workspace "MyProject"
 	startproject "MyProject"
     configurations { "Debug", "Release" }
 
-    builddir "%{cfg.config}-%{cfg.platform}-%{cfg.architecture}"
+    outputdir "%{cfg.config}-%{cfg.platform}-%{cfg.architecture}"
 
 project "MyProject"
     location "MyProject"
