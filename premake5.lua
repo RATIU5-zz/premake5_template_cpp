@@ -26,6 +26,7 @@ project "MyProject"
 		optimize "On"
 
 	filter "system:windows"
+		systemversion "latest"
 		defines { "_SYSTEM_WINDOWS" }
 
 	filter "system:linux"
