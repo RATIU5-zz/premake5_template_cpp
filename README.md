@@ -6,6 +6,7 @@ This template has some useful Windows batch scripts to help you get started quic
 
 * A script to rename your project so you don't have to manually change the name everywhere
 * A configurable build script that can be called in different ways
+* A configurable clean script to clean after a project build
 
 ### Yet to be implemented
 
