@@ -1,5 +1,5 @@
 workspace "MyProject"
-	architecture "x86_64"
+	architecture "x64"
 	configurations { "Debug", "Release" }
 
 build_dir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
@@ -13,7 +13,8 @@ project "MyProject"
 	targetdir ("bin/" .. build_dir .. "/%{prj.name}")
 	objdir ("bin-int/" .. build_dir .. "/%{prj.name}")
 
-	files { "**.h", "**.hpp", "**.c", "**.cpp" }
+	files { "%{prj.name}/src/**.h", "%{prj.name}/src/**.hpp", 
+			"%{prj.name}/src/**.c", "%{prj.name}/src/**.cpp" }
 
 	includedirs { "%{prj.name}/src" }
 
