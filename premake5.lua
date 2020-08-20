@@ -2,14 +2,16 @@ workspace "MyProject"
 	architecture "x86_64"
 	configurations { "Debug", "Release" }
 
-build_dir = "%{cfg.config}-%{cfg.platform}-%{cfg.architecture}"
+build_dir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 project "MyProject"
 	location "MyProject"
-	language "C++"
 	kind "ConsoleApp"
+	language "C++"
+	cppdialect "C++17"
+	
 	targetdir ("bin/" .. build_dir .. "/%{prj.name}")
-	objdir ("bin/" .. build_dir .. "/%{prj.name}")
+	objdir ("bin-int/" .. build_dir .. "/%{prj.name}")
 
 	files { "**.h", "**.hpp", "**.c", "**.cpp" }
 
