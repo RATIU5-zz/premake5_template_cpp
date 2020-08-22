@@ -5,6 +5,7 @@ workspace "MyProject"
 
 build_dir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+group "Core/"
 project "MyProject"
 	location "MyProject"
 	kind "ConsoleApp"
