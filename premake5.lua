@@ -3,8 +3,17 @@ workspace "MyProject"
 	configurations { "Debug", "Release" }
 	startproject "MyProject"
 
+	flags
+	{
+		"MultiProcessorCompile"
+	}
+
 build_dir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+
+group "Core/"
 project "MyProject"
 	location "MyProject"
 	kind "ConsoleApp"
@@ -14,10 +23,13 @@ project "MyProject"
 	targetdir ("bin/" .. build_dir .. "/%{prj.name}")
 	objdir ("bin-int/" .. build_dir .. "/%{prj.name}")
 
+	pchheader "pch.h"
+	pchsource "MyProject/src/pch.cpp"
+
 	files { "%{prj.name}/src/**.h", "%{prj.name}/src/**.hpp", 
 			"%{prj.name}/src/**.c", "%{prj.name}/src/**.cpp" }
 
-	includedirs { "%{prj.name}/src" }
+	includedirs { "%{prj.name}/src", "%{prj.name}/vendor/spdlog/include" }
 
 	filter "configurations:Debug"
 		defines { "_CONFIG_DEBUG" }
