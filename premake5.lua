@@ -1,34 +1,44 @@
 workspace "MyProject"
-	architecture "x86_64"
-	startproject "MyProject"
+	architecture "x64"
 	configurations { "Debug", "Release" }
+	startproject "MyProject"
 
-    	outputdir "%{cfg.config}-%{cfg.platform}-%{cfg.architecture}"
+	flags
+	{
+		"MultiProcessorCompile"
+	}
 
+build_dir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+
+group "Core/"
 project "MyProject"
-    location "MyProject"
-    language "C++"
-    kind "ConsoleApp"
-    targetdir "bin/" .. builddir .. "/%{prj.name}"
-    objdir "bin/" .. builddir .. "/%{prj.name}"
+	location "MyProject"
+	kind "ConsoleApp"
+	language "C++"
+	cppdialect "C++17"
+	
+	targetdir ("bin/" .. build_dir .. "/%{prj.name}")
+	objdir ("bin-int/" .. build_dir .. "/%{prj.name}")
 
-    files { "**.h", "**.hpp", "**.c", "**.cpp" }
+	files { "%{prj.name}/src/**.h", "%{prj.name}/src/**.hpp", 
+			"%{prj.name}/src/**.c", "%{prj.name}/src/**.cpp" }
 
-    includedirs { "%{prj.name}/src" }
+	includedirs { "%{prj.name}/src" }
 
-    filter "configuration:Debug"
-        defines { "_CONFIG_DEBUG" }
-        symbols "On"
+	filter "configurations:Debug"
+		defines { "_CONFIG_DEBUG" }
+		symbols "On"
 
-    filter "configuration:Release"
-        defines { "_CONFIG_RELEASE" }
-        optimize "On"
+	filter "configurations:Release"
+		defines { "_CONFIG_RELEASE" }
+		optimize "On"
 
-    filter "system:windows"
-        defines { "_SYSTEM_WINDOWS" }
+	filter "system:windows"
+		systemversion "latest"
+		defines { "_SYSTEM_WINDOWS" }
 
-    filter "system:linux"
-        defines { "_SYSTEM_LINUX" }
+	filter "system:linux"
+		defines { "_SYSTEM_LINUX" }
 
-    filter "system:macosx"
-        defines { "_SYSTEM_MACOSX" }
+	filter "system:macosx"
+		defines { "_SYSTEM_MACOSX" }
