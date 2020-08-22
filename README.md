@@ -1,4 +1,4 @@
-# A Template for C/C++ Premake5 Projects
+# A Template for C/C++ Premake5 Projects [![License](https://img.shields.io/github/license/johnratius/premake5_template_cpp.svg)](https://github.com/johnratius/premake5_template_cpp/blob/master/LICENSE)
 This is my custom Premake5 template for all of my C++ projects. This currently only supports Windows OS.
 
 ### Features of this template
