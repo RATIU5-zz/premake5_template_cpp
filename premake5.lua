@@ -3,8 +3,14 @@ workspace "MyProject"
 	configurations { "Debug", "Release" }
 	startproject "MyProject"
 
+	flags
+	{
+		"MultiProcessorCompile"
+	}
+
 build_dir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+group "Core/"
 project "MyProject"
 	location "MyProject"
 	kind "ConsoleApp"
