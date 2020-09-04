@@ -1,0 +1,14 @@
+# Directories
+.vs/
+.idea/
+**/bin/
+**/bin-debug/
+**/bin-release/
+!vendor/bin/premake/
+bin-int/
+
+# Files
+*.sln
+*.vcxproj
+*.user 
+*.filters
